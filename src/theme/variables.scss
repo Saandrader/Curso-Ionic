@@ -74,9 +74,17 @@
   --ion-color-light-contrast-rgb: 0, 0, 0;
   --ion-color-light-shade: #d7d8da;
   --ion-color-light-tint: #f5f6f9;
+
+    /** mostaza **/
+    --ion-color-mostaza: #f49e0b;
+    --ion-color-mostaza-rgb: 244,158,11;
+    --ion-color-mostaza-contrast: #000000;
+    --ion-color-mostaza-contrast-rgb: 0,0,0;
+    --ion-color-mostaza-shade: #d78b0a;
+    --ion-color-mostaza-tint: #f5a823;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
   /*
    * Dark Colors
    * -------------------------------------------
