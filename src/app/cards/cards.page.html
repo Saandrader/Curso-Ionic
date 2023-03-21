@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cards</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-row>
+  <ion-col sizeLg="6" sizeMd="6" sizeXs="12" *ngFor="let photo of space">
+    <ion-card (click)="presentAlert2()">
+    <img src="../../assets/space-img/{{photo.image}}" alt="">
+    <div class ="card-title">{{photo.name}}</div>
+  </ion-card>
+  </ion-col>
+</ion-row>
+</ion-content>
