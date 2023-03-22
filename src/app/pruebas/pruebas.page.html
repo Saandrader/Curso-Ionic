@@ -10,8 +10,11 @@
     <h1>Hola mundo</h1>
     <h2>Hola soy {{name}}</h2>
     <p>Estoy aprendiendo ionic</p>
-    <img width="500" src={{img}} alt="image">
     <button [disabled]="btnDisabled">{{friends.name}}</button>
+    <button class="btn" (click)="toggleButton()">Toggle</button>
+    <input  type="text" [value]="friends.career">
+    <img width="250" src={{img}} alt="image">
+
 
   </div>
 </ion-content>

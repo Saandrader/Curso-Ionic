@@ -12,6 +12,10 @@ export class PruebasPage implements OnInit {
   ngOnInit() {
   }
 
+  toggleButton(){
+    this.btnDisabled = !this.btnDisabled
+  }
+
   name = 'Samuel';
   img ='https://source.unsplash.com/random'
   btnDisabled = true;

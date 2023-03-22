@@ -11,17 +11,19 @@ export class JsonPage implements OnInit {
 
   users: any = [];
   permission: boolean = false;
+  searchedUser : any;
 
   constructor(
     private http: HttpClient
   ) { }
 
   ngOnInit() {
-    this.permission = false;
+    this.permission = true;
     console.log("Holaaa");
     this.getUsers().subscribe(res=>{
       console.log("Res",res)
       this.users = res;
+      this.searchedUser = this.users;
     });
   }
 
@@ -33,6 +35,18 @@ export class JsonPage implements OnInit {
         return res.data;
       })
     )
+  }
+
+  searchCustomer(event: any){
+    const text = event.target.value;
+    this.searchedUser = this.users;
+    if(text && text.trim() != ''){
+      this.searchedUser = this.searchedUser.filter((user: any)=>{
+        return (user.name.toLowerCase().indexOf(text.toLowerCase())> -1);
+       })
+
+    }
+
   }
 
 }
