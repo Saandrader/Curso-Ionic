@@ -10,8 +10,57 @@
     <h1>Hola mundo</h1>
     <h2>Hola soy {{name}}</h2>
     <p>Estoy aprendiendo ionic</p>
-    <img width="500" src={{img}} alt="image">
-    <button [disabled]="btnDisabled">{{friends.name}}</button>
+    <input class="white" type="text" value="Pablo" (keyup)="changeName($event)">
+    <p>Este input de aca actualiza el nombre {{person.name}} en tiempo real.</p>
+    <hr class="black"/>
 
+    <p>El primer boton activa o desactiva el segundo botón</p>
+    <ion-grid>
+      <ion-row>
+        <ion-col>
+          <button class="btn" (click)="toggleBtn()"> Toggle Button</button>
+          <button class="btn" [disabled]="btnDisabled">Button</button>
+        </ion-col>
+        <ion-col>
+          <p *ngIf = "!btnDisabled; else elseBlock">¡Hola, como estas!</p>
+          <ng-template #elseBlock>
+            Dale click a Toggle Button
+          </ng-template>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+    <hr class="black"/>
+
+    <p>La edad de {{person.name}} es {{person.age}}</p>
+    <button class="btn" (click)="increaseAge()">Aumentar Edad</button>
+    <input class="white" min = "18"  type="number" [(ngModel)]="person.age" required #ageInput='ngModel'>
+    <p>Mayor de edad: {{ageInput.valid}}</p>
+    <hr class="black"/>
+
+    <h2>Lista de Nombres</h2>
+    <input type="text" class="white" [(ngModel)]="newName" id="input" (keyup)="onEnter($event)">
+    <button class="btn" (click)="addName()">Añadir nombre</button>
+    <p *ngIf="person.names.length === 0">No hay nombres</p>
+    <li *ngFor="let Name of person.names index as i" >
+      {{i+1}}. {{Name}}
+      <button class="closeBtn" (click)="deleteName(i)">
+        <ion-icon slot="icon-only" name="close"></ion-icon>
+      </button>
+    </li>
+    <hr class="black"/>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col  *ngFor="let miembro of familia.slice(0,familia.length/2)">
+          {{miembro.name}}: {{miembro.state}} {{miembro.description}}
+
+
+        </ion-col>
+        <ion-col *ngFor="let miembro of familia.slice(familia.length/2)">
+          {{miembro.name}}: {{miembro.state}} {{miembro.description}}
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>
   </div>
 </ion-content>

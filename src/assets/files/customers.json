@@ -11,6 +11,18 @@
       "state": "Samu",
       "description": "Si trajo el portatil...",
       "image" : "https://source.unsplash.com/random"
+    },
+    {
+      "name": "Abuelita",
+      "state": "Samuelito",
+      "description": "Ya esta servido",
+      "image" : "https://source.unsplash.com/random"
+    },
+    {
+      "name": "Maida",
+      "state": "Niño",
+      "description": "Manolo ya comio?",
+      "image" : "https://source.unsplash.com/random"
     }
   ]
 }
